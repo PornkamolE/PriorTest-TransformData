@@ -1,0 +1,110 @@
+{
+	"edges": [
+		{
+			"id": "xy-edge__input-node-1-voyage-embed-node-2",
+			"source": "input-node-1",
+			"target": "voyage-embed-node-2"
+		},
+		{
+			"id": "xy-edge__voyage-embed-node-2-http-client-adapter-verticle-node-4",
+			"source": "voyage-embed-node-2",
+			"target": "http-client-adapter-verticle-node-4"
+		},
+		{
+			"id": "xy-edge__http-client-adapter-verticle-node-4-voyage-transform-node-3",
+			"source": "http-client-adapter-verticle-node-4",
+			"target": "voyage-transform-node-3"
+		},
+		{
+			"id": "xy-edge__voyage-transform-node-3-to-publish-verticle-node-10",
+			"source": "voyage-transform-node-3",
+			"target": "to-publish-verticle-node-10"
+		},
+		{
+			"id": "xy-edge__to-publish-verticle-node-10-line-node-7",
+			"source": "to-publish-verticle-node-10",
+			"target": "line-node-7"
+		},
+		{
+			"id": "xy-edge__to-publish-verticle-node-10-facebook-node-8",
+			"source": "to-publish-verticle-node-10",
+			"target": "facebook-node-8"
+		},
+		{
+			"id": "xy-edge__to-publish-verticle-node-10-discord-node-9",
+			"source": "to-publish-verticle-node-10",
+			"target": "discord-node-9"
+		},
+		{
+			"id": "xy-edge__to-publish-verticle-node-10-output-node-10",
+			"source": "to-publish-verticle-node-10",
+			"target": "output-node-10"
+		}
+	],
+	"nodes": [
+		{
+			"data": {
+				"page": "embedding"
+			},
+			"id": "input-node-1",
+			"type": "input"
+		},
+		{
+			"data": {
+				"model": "1",
+				"page": "embedding"
+			},
+			"id": "voyage-embed-node-2",
+			"type": "org.maoz.prehandle.workers.neoai.aiclient.embedding.VoyageVerticle"
+		},
+		{
+			"data": {
+				"page": "embedding"
+			},
+			"id": "voyage-transform-node-3",
+			"type": "org.maoz.prehandle.workers.neoai.aiclient.embedding.util.VoyageTransformVerticle"
+		},
+		{
+			"data": {
+				"page": "embedding"
+			},
+			"id": "http-client-adapter-verticle-node-4",
+			"type": "org.maoz.prehandle.workers.neoai.httpclient.HttpClientAdapterVerticle"
+		},
+		{
+			"data": {
+				"page": "embedding"
+			},
+			"id": "line-node-7",
+			"type": "org.maoz.prehandle.workers.neoai.notify.LineVerticle"
+		},
+		{
+			"data": {
+				"page": "embedding"
+			},
+			"id": "facebook-node-8",
+			"type": "org.maoz.prehandle.workers.neoai.notify.FacebookVerticle"
+		},
+		{
+			"data": {
+				"page": "embedding"
+			},
+			"id": "discord-node-9",
+			"type": "org.maoz.prehandle.workers.neoai.notify.DiscordVerticle"
+		},
+		{
+			"data": {
+				"page": "embedding"
+			},
+			"id": "to-publish-verticle-node-10",
+			"type": "org.maoz.prehandle.workers.neoai.ebtransform.ToPublishVerticle "
+		},
+		{
+			"data": {
+				"page": "embedding"
+			},
+			"id": "output-node-10",
+			"type": "org.maoz.prehandle.workers.neoai.output.OutputVerticle"
+		}
+	]
+}
